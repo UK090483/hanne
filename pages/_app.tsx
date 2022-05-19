@@ -47,6 +47,18 @@ function App({ Component, pageProps: _pageProps }: AppPropsWithStaticProps) {
         type="text/javascript"
         async
       ></Script>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=G-6W1TGK0RC1`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6W1TGK0RC1');
+        `}
+      </Script>
       <AnalyticsContextProvider id="G-6W1TGK0RC1">
         <AppContextProvider data={pageProps.data} hostName={AppConfig.hostname}>
           <Layout>
