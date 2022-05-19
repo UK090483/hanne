@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           <Logos />
           <Contact />
         </div>
-        <div className="flex flex-col md:flex-row  gap-6 items-center justify-center mt-16 mb-12">
+        <div className="flex flex-col md:flex-row  gap-6 items-center justify-center mt-16 mb-12 text-white">
           <span>©{year}</span>
           {imprintPage?.href && imprintPage?.label && (
             <Link href={imprintPage?.href}>{imprintPage?.label}</Link>

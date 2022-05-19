@@ -29,7 +29,7 @@ const DefaultList: React.FC<DefaultListProps> = (props) => {
           {title}
         </Typo>
       )}
-      <ul className="grid grid-cols-1 gap-32 py-32">
+      <ul className="grid grid-cols-1 gap-32 pb-32">
         {filterItems && (
           <Filter
             active={filter}
@@ -39,6 +39,7 @@ const DefaultList: React.FC<DefaultListProps> = (props) => {
         )}
         {filteredItems.map((i, index) => (
           <DefaultListItem
+            hasTitle={!!title}
             locale={locale}
             key={i._id}
             position={index % 2 === 0 ? "right" : "left"}

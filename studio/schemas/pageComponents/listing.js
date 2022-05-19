@@ -110,6 +110,7 @@ export default withLocalization({
         !(
           parent?.type === "custom" ||
           parent?.contentType === "persons" ||
+          parent?.contentType === "pages" ||
           parent?.contentType === "event" ||
           parent?.contentType === "documentations"
         ),

@@ -11,6 +11,7 @@ interface DefaultListItemProps extends DefaultListItemResult {
   className?: string;
   position?: "left" | "right";
   locale?: string;
+  hasTitle?: boolean;
 }
 
 const DefaultListItem: React.FC<DefaultListItemProps> = (props) => {
@@ -23,6 +24,7 @@ const DefaultListItem: React.FC<DefaultListItemProps> = (props) => {
     featuredImage,
     subTitle,
     locale,
+    hasTitle,
   } = props;
 
   return (
@@ -51,7 +53,7 @@ const DefaultListItem: React.FC<DefaultListItemProps> = (props) => {
               {subTitle.toUpperCase()}
             </Typo>
           )}
-          <Typo as={"h2"} variant="h2">
+          <Typo as={hasTitle ? "h3" : "h2"} variant="h3">
             {title}
           </Typo>
           <Typo className="w-full overflow-hidden whitespace-pre-line mb-4 ">

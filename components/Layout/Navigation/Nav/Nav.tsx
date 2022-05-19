@@ -23,7 +23,7 @@ const Nav: React.FC = () => {
   const hideLogo = data?.header?.withOutLogo;
 
   return (
-    <header>
+    <>
       <nav>
         <div
           className={clsx(
@@ -73,7 +73,7 @@ const Nav: React.FC = () => {
 
         <BookingButton />
       </NavigationMobile>
-    </header>
+    </>
   );
 };
 
