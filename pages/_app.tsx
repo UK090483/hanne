@@ -41,12 +41,7 @@ function App({ Component, pageProps: _pageProps }: AppPropsWithStaticProps) {
         data-blockingmode="auto"
         type="text/javascript"
       ></Script>
-      <Script
-        id="CookieDeclaration"
-        src="https://consent.cookiebot.com/c4685f12-00e4-4d22-ac24-c9081bc06ec7/cd.js"
-        type="text/javascript"
-        async
-      ></Script>
+
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=G-6W1TGK0RC1`}
         strategy="afterInteractive"
@@ -59,16 +54,16 @@ function App({ Component, pageProps: _pageProps }: AppPropsWithStaticProps) {
           gtag('config', 'G-6W1TGK0RC1');
         `}
       </Script>
-      <AnalyticsContextProvider id="G-6W1TGK0RC1">
-        <AppContextProvider data={pageProps.data} hostName={AppConfig.hostname}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <PreviewIndicator show={!!preview} />
-          <Cookie />
-          <Seo />
-        </AppContextProvider>
-      </AnalyticsContextProvider>
+      {/* <AnalyticsContextProvider id="G-6W1TGK0RC1"> */}
+      <AppContextProvider data={pageProps.data} hostName={AppConfig.hostname}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <PreviewIndicator show={!!preview} />
+
+        <Seo />
+      </AppContextProvider>
+      {/* </AnalyticsContextProvider> */}
     </>
   );
 }
