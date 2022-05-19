@@ -36,7 +36,7 @@ const Nav: React.FC = () => {
           )}
         >
           <Link aria-label="Home" href="/">
-            {!hideLogo && <Logo />}
+            {(!hideLogo || scrolled) && <Logo />}
           </Link>
           <div className="flex">
             <HeaderNavigation

@@ -4,8 +4,8 @@ import React from "react";
 
 export const Logo = () => {
   return (
-    <span className=" whitespace-nowrap text-[1.6rem] md:text-[2.8rem]  font-bold flex justify-center  items-center">
-      <FlowerFat className="fill-current stroke-current h-[0.65em] stroke-[20] translate-y-[1.5px]" />{" "}
+    <span className=" whitespace-nowrap text-[1.6rem] md:text-[2.8rem]   font-bold flex justify-center  leading-none items-center">
+      <FlowerFat className="fill-current stroke-current h-[0.65em] stroke-[20] translate-y-[1.5px] mr-2" />
       Hanne Rønn
     </span>
   );
