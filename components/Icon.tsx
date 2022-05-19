@@ -222,7 +222,7 @@ const Icons: IconsObject = {
   },
 };
 
-type IconProps = {
+export type IconProps = {
   icon:
     | "facebook"
     | "whatsApp"

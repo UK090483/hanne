@@ -28,8 +28,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap"
             rel="stylesheet"
           />
-
-          
         </Head>
 
         <body

@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import Script from "next/script";
-const isDevelopment = process.env.NODE_ENV === "development";
+// const isDevelopment = process.env.NODE_ENV === "development";
+const isDevelopment = false;
 const DefaultCookieName = "consent";
 
 type Consents = { [k: string]: string | undefined };
