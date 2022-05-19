@@ -3,6 +3,7 @@ import SkipToContent from "@lib/SkipToContent/SkipComponent";
 import Footer from "./Footer";
 import { Header } from "./Header";
 import Nav from "./Navigation/Nav/Nav";
+import BookingButton from "@components/BookingButton";
 
 export const Layout: React.FC = (props) => {
   const { children } = props;
@@ -17,6 +18,7 @@ export const Layout: React.FC = (props) => {
         {children}
       </main>
       <Footer />
+      <BookingButton />
     </>
   );
 };

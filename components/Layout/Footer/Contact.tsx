@@ -7,7 +7,7 @@ const Contact: React.FunctionComponent = (props) => {
   const { data } = useAppContext();
 
   return (
-    <div className="flex flex-wrap pb-24 md:flex-nowrap text-white">
+    <div className="flex flex-wrap pb-24 md:flex-nowrap text-white ">
       <div className="w-full ">
         <p className="pb-6 font-bold">Kontakt</p>
         <div className="flex items-center pb-6">

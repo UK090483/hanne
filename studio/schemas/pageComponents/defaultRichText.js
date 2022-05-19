@@ -86,5 +86,6 @@ export default {
     { type: "eventPlug" },
     { type: "seoText" },
     { type: "tablePlug" },
+    { type: "embed" },
   ],
 };

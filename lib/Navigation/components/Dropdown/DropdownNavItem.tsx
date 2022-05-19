@@ -1,16 +1,16 @@
-import { useNavigation, useNavigationOpen } from "../../NavigationContext";
-import React, { useRef } from "react";
+import { useNavigationOpen } from "../../NavigationContext";
+import React, { useEffect, useRef } from "react";
 import { NavItem } from "../../types";
 import { NavigationModulDropdownContainer } from "./NavigationModulDropdownContainer";
 import useIsActive from "../../helper/useIsActive";
 import NavigationItemBase from "../NavItem/NavigationItemBase";
 
-type NavigationModulDropdownProps = {
+type NavigationDropdownProps = {
   items?: NavItem[];
   id: string;
 };
 
-const DropdownNavItem: React.FC<NavigationModulDropdownProps> = (props) => {
+const DropdownNavItem: React.FC<NavigationDropdownProps> = (props) => {
   const { children, items, id } = props;
   const hasItems = items && items.length > 0;
 
@@ -27,8 +27,11 @@ const DropdownNavItem: React.FC<NavigationModulDropdownProps> = (props) => {
   const wrapRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = () => {
+    if ("ontouchstart" in window) return;
+
     checkButtonPosition();
     setOpen(id);
+    return false;
   };
   const handleMouseLeave = () => setOpen(null);
 
@@ -38,6 +41,7 @@ const DropdownNavItem: React.FC<NavigationModulDropdownProps> = (props) => {
     }
     setOpen(id);
     checkButtonPosition();
+    return false;
   };
 
   const checkButtonPosition = () => {

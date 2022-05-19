@@ -29,7 +29,7 @@ const DefaultList: React.FC<DefaultListProps> = (props) => {
           {title}
         </Typo>
       )}
-      <ul className="grid grid-cols-1 gap-32 pb-32">
+      <ul className="grid grid-cols-1 gap-32 py-32">
         {filterItems && (
           <Filter
             active={filter}

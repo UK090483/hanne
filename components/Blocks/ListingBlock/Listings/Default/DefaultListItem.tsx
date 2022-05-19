@@ -28,24 +28,24 @@ const DefaultListItem: React.FC<DefaultListItemProps> = (props) => {
   return (
     <li className="list-none" data-testid="DefaultListItem">
       <Link
-        className={`flex flex-wrap md:flex-nowrap bg-white mx-auto w-full  ${className}`}
+        className={`grid gap-8 md:grid-cols-2  bg-white mx-auto w-full  ${className}`}
         href={`${slug ? "/" + slug : "/"}`}
       >
         {featuredImage && (
           <div
             data-testid="DefaultListItemImage"
-            className={`relative w-full  h-80   ${
+            className={`relative w-full  min-h-[300px]   ${
               position === "left" ? "" : "md:order-2"
             }`}
           >
             <SanityImage
               image={featuredImage}
-              objectFit="contain"
+              objectFit="cover"
               sizes={"500px"}
             />
           </div>
         )}
-        <div className={`px-3 w-full`}>
+        <div className={` pt-8 md:pt-0 w-full`}>
           {subTitle && (
             <Typo bold space={false} className=" pb-3 " variant="body-l">
               {subTitle.toUpperCase()}

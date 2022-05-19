@@ -41,7 +41,7 @@ const RichText: React.FC<RichTextPros> = (props: any) => {
         spacer: SpacerPlug,
         imagePlug: ImagePlug,
         eventPlug: EventPlug,
-        embedHTML: EmbedHTML,
+        embed: EmbedHTML,
         seoText: SeoTextPlug,
         playerPlug: PlayerPlug,
         autoGalleryPlug: AutoGalleryPlug,

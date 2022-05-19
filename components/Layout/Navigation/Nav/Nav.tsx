@@ -11,6 +11,7 @@ import clsx from "clsx";
 import React from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import Burger from "./Burger";
+import BookingButton from "@components/BookingButton";
 const Nav: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const { data } = useAppContext();
@@ -21,14 +22,12 @@ const Nav: React.FC = () => {
   const headerColor = data?.header?.color;
   const hideLogo = data?.header?.withOutLogo;
 
-  console.log(data);
-
   return (
-    <>
+    <header>
       <nav>
         <div
           className={clsx(
-            "flex items-center justify-between w-full h-16 transition-colors  px-3 ",
+            "flex items-center justify-between w-full  transition-colors pl-5 ",
             {
               "text-white": headerColor !== "black" && !scrolled && !open,
               "bg-white bg-opacity-80 text-black": scrolled,
@@ -39,33 +38,23 @@ const Nav: React.FC = () => {
           <Link aria-label="Home" href="/">
             {!hideLogo && <Logo />}
           </Link>
-
-          <HeaderNavigation
-            items={navItems || []}
-            className="items-center justify-center hidden  menu:flex "
-          />
-
-          {/* <div className="flex gap-4   flex-shrink-0 items-center">
-            <LangSwitch className="hidden menu:flex" slugs={langSwitchData} />
-          </div> */}
-
-          {/* <div className="menu:hidden mr-2">
-            <Hamburger
-              label="Show menu"
-              size={24}
-              toggled={open}
-              toggle={setOpen}
+          <div className="flex">
+            <HeaderNavigation
+              items={navItems || []}
+              className="items-center justify-center hidden  menu:flex "
             />
-          </div> */}
-          <button
-            data-testid="menu-overlay-toggle text-red"
-            onClick={() => setOpen((s) => !s)}
-            aria-label={"Open the menu"}
-            aria-expanded={open}
-            className="menu:hidden mr-2 w-10 h-10  relative"
-          >
-            <Burger open={open} />
-          </button>
+
+            <BookingButton className="hidden  menu:flex" />
+            <button
+              data-testid="menu-overlay-toggle text-red"
+              onClick={() => setOpen((s) => !s)}
+              aria-label={"Open the menu"}
+              aria-expanded={open}
+              className="menu:hidden mr-2 w-10 h-10  relative"
+            >
+              <Burger open={open} />
+            </button>
+          </div>
         </div>
       </nav>
       <NavigationMobile
@@ -81,8 +70,10 @@ const Nav: React.FC = () => {
             setOpen(false);
           }}
         /> */}
+
+        <BookingButton />
       </NavigationMobile>
-    </>
+    </header>
   );
 };
 
