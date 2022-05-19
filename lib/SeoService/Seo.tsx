@@ -26,8 +26,8 @@ const Seo: React.FC<SeoProps> = (props) => {
 
   return (
     <NextSeo
-      // nofollow={true}
-      // noindex={true}
+      nofollow={true}
+      noindex={true}
       title={title}
       description={metaDesc}
       canonical={canUrl}
@@ -46,7 +46,7 @@ const Seo: React.FC<SeoProps> = (props) => {
             height: 630,
           },
         ],
-        site_name: "Perspektiv Region",
+        site_name: "Hanne Rønn Psykoterapeut",
       }}
     />
   );
