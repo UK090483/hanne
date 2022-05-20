@@ -71,7 +71,7 @@ const Nav: React.FC = () => {
           }}
         /> */}
 
-        <BookingButton />
+        <BookingButton onClick={() => setOpen(false)} />
       </NavigationMobile>
     </>
   );
