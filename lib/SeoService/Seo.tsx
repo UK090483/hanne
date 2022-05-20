@@ -12,7 +12,10 @@ type SeoProps = {
 
 const Seo: React.FC<SeoProps> = (props) => {
   const { pathname, defaultLocale, asPath, locale } = useRouter();
-  const { data, hostName } = useAppContext();
+  const { data } = useAppContext();
+
+  const hostName = "https://hanne-roenn.dk";
+
   const seo = data?.seo;
   const preparedLocale = defaultLocale === locale ? "" : "/" + locale;
   const canonicalRoute = `${preparedLocale}${asPath === "/" ? "" : asPath}`;
@@ -26,8 +29,8 @@ const Seo: React.FC<SeoProps> = (props) => {
 
   return (
     <NextSeo
-      // nofollow={true}
-      // noindex={true}
+      nofollow={true}
+      noindex={true}
       title={title}
       description={metaDesc}
       canonical={canUrl}
