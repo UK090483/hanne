@@ -112,7 +112,20 @@ const NavigationMobile: React.FC<NavigationMobileProps> = ({
                       className="absolute transform rotate-180 top-32 right-6 "
                       onClick={handleBackClick}
                     >
-                      <Svg icon="chevronRight" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        className={`inline-block w-12 h-12 stroke-current  fill-none  `}
+                        fill="none"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                      {/* <Svg icon="chevronRight" /> */}
                     </button>
 
                     {item.items &&
