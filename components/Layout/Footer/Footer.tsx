@@ -29,15 +29,15 @@ const Footer: React.FC = () => {
         </Grid>
 
         <div className="flex flex-col md:flex-row  gap-6 items-center justify-center mt-16 mb-12 text-white">
-          <span>©{year}</span>
-          {imprintPage?.href && imprintPage?.label && (
+          <span>© Hanne Rønn {year} </span>
+          {/* {imprintPage?.href && imprintPage?.label && (
             <Link href={imprintPage?.href}>{imprintPage?.label}</Link>
           )}
           {privatePolicyPage?.href && privatePolicyPage?.label && (
             <Link href={privatePolicyPage?.href}>
               {privatePolicyPage?.label}
             </Link>
-          )}
+          )} */}
         </div>
       </Section>
     </footer>
