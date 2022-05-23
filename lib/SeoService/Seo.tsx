@@ -14,7 +14,7 @@ const Seo: React.FC<SeoProps> = (props) => {
   const { pathname, defaultLocale, asPath, locale } = useRouter();
   const { data } = useAppContext();
 
-  const hostName = "https://hanne-roenn.dk";
+  const hostName = "https://www.hanne-roenn.dk";
 
   const seo = data?.seo;
   const preparedLocale = defaultLocale === locale ? "" : "/" + locale;
@@ -29,8 +29,8 @@ const Seo: React.FC<SeoProps> = (props) => {
 
   return (
     <NextSeo
-      nofollow={true}
-      noindex={true}
+      // nofollow={true}
+      // noindex={true}
       title={title}
       description={metaDesc}
       canonical={canUrl}
