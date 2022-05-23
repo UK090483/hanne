@@ -28,6 +28,12 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap"
             rel="stylesheet"
           />
+          <script
+            async
+            defer
+            data-website-id="63deb0c9-ab27-45a3-bf5b-865955244b62"
+            src="https://umami-neon-pi.vercel.app/umami.js"
+          ></script>
         </Head>
 
         <body
