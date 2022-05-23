@@ -1,5 +1,5 @@
 {
-  "hostname": "https://www.bla.eu",
+  "hostname": "https://www.hanne-roenn.dk",
   "locales": {
     "da": { "title": "Dänisch", "isDefault": true, "flag": "🇩🇰" },
     "en": { "title": "Englisch", "flag": "🇺🇸" }
