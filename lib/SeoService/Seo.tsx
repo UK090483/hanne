@@ -18,7 +18,7 @@ const Seo: React.FC<SeoProps> = (props) => {
 
   const seo = data?.seo;
   const preparedLocale = defaultLocale === locale ? "" : "/" + locale;
-  const canonicalRoute = `${preparedLocale}${asPath === "/" ? "" : asPath}`;
+  const canonicalRoute = `${preparedLocale}${asPath}`;
 
   if (!seo) return null;
   const { metaTitle, metaDesc, shareDesc, shareGraphic } = seo;
