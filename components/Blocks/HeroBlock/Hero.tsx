@@ -94,8 +94,8 @@ const Hero: React.FunctionComponent<HeroBlockProps> = (props) => {
       >
         {size === "full" && (
           <>
-            <motion.div className="mt-0" variants={item}>
-              <Flower className=" w-full fill-current" />
+            <motion.div className="mt-0 " variants={item}>
+              <Flower className="w-[280px] fill-current" />
             </motion.div>
             <motion.div className="mt-0" variants={item}>
               <Typo space={false} variant="h1" as="p">
