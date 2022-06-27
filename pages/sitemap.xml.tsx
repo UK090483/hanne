@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const sitemap = await buildSitemap({
     pages: pages || [],
     hostname: AppConfig.hostname,
-    locales: AppConfig.locales,
+    locales: { da: AppConfig.locales.da },
   });
 
   res.setHeader("Content-Type", "text/xml");
