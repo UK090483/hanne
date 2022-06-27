@@ -34,6 +34,7 @@ class MyDocument extends Document {
             data-website-id="63deb0c9-ab27-45a3-bf5b-865955244b62"
             src="https://umami-neon-pi.vercel.app/umami.js"
           ></script>
+          <meta name="google-site-verification" content="2dA8IEM1vf0qvSo7H_Fd5S9rIy0xnKzzVh0HVz7aETA" />
         </Head>
 
         <body
