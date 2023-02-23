@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import type { SanityClient } from "@sanity/client/sanityClient";
+import type { SanityClient } from "@sanity/client";
 
 export default async function preview(
   req: NextApiRequest,
@@ -23,8 +23,12 @@ export default async function preview(
   }
 
   const doc = await client.fetch(
-    `*[ _id == "${req.query.id}" ][0]{ 'slug':select( defined(pageType) => pageType->slug.current +'/'+ slug.current , slug.current)}`
+    `*[ _id == "${req.query.id}" || _id == "drafts.${req.query.id}" ][0]{ 'slug':select( defined(pageType) => pageType->slug.current +'/'+ slug.current , slug.current)}`
   );
+
+  if (!doc?.slug) {
+    return res.status(401).json({ message: "slug is Missing" });
+  }
 
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({});

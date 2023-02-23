@@ -8,7 +8,7 @@ import {
 } from "next";
 import { ComponentType } from "react";
 
-import type { SanityClient } from "@sanity/client/sanityClient";
+import type { SanityClient } from "@sanity/client";
 import { ParsedUrlQuery } from "querystring";
 
 export type SPBComponent = {

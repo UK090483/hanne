@@ -4,6 +4,7 @@ import Link from "@components/Link";
 const Social: React.FC = () => {
   const { data } = useAppContext();
   const items = data?.footer?.socialMedia;
+
   return (
     <div className=" grid grid-cols-3 gap-12  place-content-center ">
       {items &&

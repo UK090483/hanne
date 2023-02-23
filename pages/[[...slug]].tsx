@@ -11,7 +11,7 @@ import layoutQuery from "@components/Layout/LayoutQuery";
 import BodyParser from "@lib/SanityPageBuilder/lib/BodyParser";
 import fetchStaticPaths from "@lib/SanityPageBuilder/lib/fetchStaticPath/fetchStaticPath";
 import fetchStaticProps from "@lib/SanityPageBuilder/lib/fetchStaticProps/fetchStaticProps";
-import { sanityClient as client } from "@lib/SanityService/sanity.server";
+import { getSanityClient } from "@lib/SanityService/sanity.server";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import appConfig from "../app.config.json";
 const locales = appConfig.locales;
@@ -40,7 +40,7 @@ const Page = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return await fetchStaticPaths({
-    client,
+    client: getSanityClient(false),
     doc: "page",
     locales,
   });
@@ -48,6 +48,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (props) => {
   const { params, preview, locale } = props;
+
+  const client = getSanityClient(!!preview);
+
   return await fetchStaticProps<PageResult>({
     locale,
     revalidate: true,
